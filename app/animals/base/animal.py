@@ -16,21 +16,30 @@ class Animal:
         Animal.alive.append(self)
 
     @property
-    def health(self) -> int:
+    def health(
+        self
+    ) -> int:
         return self._health
 
     @health.setter
-    def health(self, value: int) -> None:
+    def health(
+        self,
+        value: int
+    ) -> None:
         self._health = value
 
         if value <= 0:
             self._health = 0
             self.dead()
 
-    def dead(self) -> None:
+    def dead(
+        self
+    ) -> None:
         Animal.alive.remove(self)
 
-    def __repr__(self) -> str:
+    def __repr__(
+        self
+    ) -> str:
         return (
             f"{{Name: {self.name}, Health: {self.health}, "
             f"Hidden: {self.hidden}}}"
